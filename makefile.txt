@@ -1,0 +1,36 @@
+#
+# makefile for Assign A of CSE1CPP Semester 2 Bundoora
+#
+# Use the file names supplied in the assignment. That way to compile
+# all of the files in the assignment, all you have to do is type
+#
+# make all
+#
+# at the Unix prompt and that will compile all the files together
+# into an executable program called
+#
+# pern
+#
+
+CC = g++
+LIBS = -g -Wall  -std=c++17
+
+pern: dragon.o rider.o rdpair.o main.o
+   $(CC) $(LIBS) -o pern dragon.o rider.o rdpair.o main.o
+
+dragon.o : dragon.cpp
+   $(CC) $(LIBS) -c dragon.cpp
+
+main.o : main.cpp
+   $(CC) $(LIBS) -c main.cpp
+
+rider.o : rider.cpp
+   $(CC) $(LIBS) -c rider.cpp
+
+rdpair.o : rdpair.cpp
+   $(CC) $(LIBS) -c rdpair.cpp
+
+all : pern clean
+
+clean:
+   rm *.o
