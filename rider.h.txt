@@ -1,0 +1,59 @@
+/*
+ * File Name:    rider.h
+ *
+ * Author:        Your Name
+ * Creation Date: Tuesday, August 13 2019, 18:19
+ * Last Modified: Wednesday, August 21 2019, 10:57
+ *
+ * File Description:
+ *
+ * definition for class Rider
+ * A Rider's name never changes
+ * A Rider's age changes
+ * A Rider's rank can change
+ *
+ */
+
+#ifndef RIDER_H
+#define RIDER_H
+
+#include <iostream>
+#include <string>
+#include <fstream>
+
+class Rider
+{
+public:
+    Rider( ) = default;
+    // Use this constructor when reading from the file
+    // as we know all the information
+    // Rider( const std::string & name, int age, const std::string& rank );
+
+    // accessor functions, inlined for efficiency
+    const std::string & getName( ) const { return name; }
+    const std::string & getRank( ) const { return rank; }
+    int getAge( ) const { return age; }
+
+    /*
+     * mutator functions to be implemented in rider.cpp
+    void setRank( const std::string& rank );
+    void setAge( int age );
+    void incAge( );
+    */
+
+   /*
+    * overlaoded friend functions
+    friend std::ostream& operator << (std::ostream& os, const Rider& d );
+    friend std::ofstream& operator << (std::ofstream& os, const Rider& d );
+    friend std::istream& operator >> (std::istream& is, Rider& d );
+    friend std::ifstream& operator >> (std::ifstream& fin, Rider& d );
+    */
+
+private:
+   std::string name {};
+   int age {0};
+   std::string rank {};
+
+};
+
+#endif
