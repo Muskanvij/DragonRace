@@ -1,14 +1,5 @@
 #
-# makefile for Assign A of CSE1CPP Semester 2 Bundoora
-#
-# Use the file names supplied in the assignment. That way to compile
-# all of the files in the assignment, all you have to do is type
-#
-# make all
-#
-# at the Unix prompt and that will compile all the files together
-# into an executable program called
-#
+
 # pern
 #
 
